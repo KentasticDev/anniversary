@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anniversary Gift for My Mahal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Front Page -->
+    <div id="frontPage">
+      <h1 id="greeting">Happy Anniversary, Mahal koo! ❤️</h1>
+      <p style="opacity: 30%;">click click mo tapno agparang amin</p>
+      <p style="display: none;">Awan man ti mairegalok kinka ngem etoy ti way nga napanunot ko tapno makabawi kinka</p>
+      <p style="display: none;">Sakbay ti amin, nagaramid nak ti quiz nga about kanyak hehehe</p>
+      <button id="startQuiz" style="display: none;">Quiz</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <section id="quiz" style="display: none;">
+      <h2>Quiz from your Mahal!</h2>
+      <div id="quizQuestions"></div>
+      <button id="submitQuiz" style="display: none;">Next</button>
+      <p id="quizResult"></p>
+    </section>
+
+    <!-- Drawing Canvas -->
+    <section id="drawing" style="display: none;">
+      <h2>Draw Something for your Mahal!</h2>
+      <div>
+        <label for="colorPicker">Choose a color:</label>
+        <input type="color" id="colorPicker" value="#e74c3c">
+      </div>
+      <canvas id="drawCanvas" width="400" height="300"></canvas>
+      <button id="clearCanvas">Clear</button>
+      <button id="sendDrawing">Send Drawing</button>
+    </section>
+
+    <!-- Letter Section -->
+    <section id="letter" style="display: none;">
+      <h2>Write a letter for your Mahal!</h2>
+      <textarea id="letterContent" placeholder="Write your letter here..." rows="10"></textarea>
+      <button id="sendLetter">Send Letter</button>
+    </section>
+
+    <!-- Final Message Section -->
+    <section id="finalMessage" style="display: none;">
+      <h2>Thank You for Everything! ❤️</h2>
+      <img src="uploads/us.png" alt="Picture of Us" style ="max-width: 200px; height: auto;">
+      <p id="finalText">Hi mahal ko! Sorry no etuy lang ti kayak nga ited tatta anniversary ta ngem thank you ti amin amin nga inubram para kanyak. Laglagipem nga uray matampuhin nak ket ayayaten ka kanayon. Thank you ti panangaw awat mo ti ugalik nga kastoy ta no uray kastuyak di nga nagbaliw panagayat mo kanyak. Awan danag addan to latta surprise nga maited kinka haan man nga tatta ngem dita ammo hehehe. Happy 1st Anniversary mahal koo! Iloveyouuusomuch forever I promise😙😙</p>
+    </section>
+  </div>
+
+  <div class="dancing-icon">
+    <div class="hearts-animations">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // JavaScript for front page interaction
+    let clickCount = 0;
+    const greeting = document.getElementById("greeting");
+    const paragraphs = document.querySelectorAll("#frontPage p");
+    const startQuizButton = document.getElementById("startQuiz");
+
+    greeting.addEventListener("click", () => {
+      clickCount++;
+      if (clickCount === 1) {
+        paragraphs[0].style.display = "none";
+        paragraphs[1].style.display = "block"; // Show first paragraph
+      } else if (clickCount === 2) {
+        paragraphs[2].style.display = "block"; // Show second paragraph
+        startQuizButton.style.display = "block"; // Show button
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeef8; /* Soft pink background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 90vh; /* Full viewport height */
+  }
+  
+  .container {
+    max-width: 600px;
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Auto height to fit content */
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ff6f91; /* Pink border */
+    overflow: auto; /* Allow scrolling if content overflows */
+  }
+  
+  h1, h2, p {
+    color: #ff6f91; /* Romantic pink color */
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+  }
+  
+  button {
+    background-color: #ff6f91; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width buttons */
+  }
+  
+  button:hover {
+    background-color: #ff4c7a; /* Darker pink on hover */
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff6f91; /* Pink border for textarea */
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+  }
+  
+  canvas {
+    border: 2px dashed #ff6f91; /* Dashed pink border for canvas */
+    margin-top: 10px;
+    border-radius: 10px; /* Rounded corners */
+  }
+  /* Valentine-themed styles for quiz options */
+#quizQuestions {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffeff0; /* Light pink background for options */
+    border: 2px solid #ff6f91; /* Pink border */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    cursor: pointer; /* Pointer cursor for clickable options */
+  }
+  
+  label:hover {
+    background-color: #ff6f91; /* Darker pink on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+  }
+  
+  input[type="radio"]:checked + label {
+    background-color: #ff4c7a; /* Selected option color */
+    color: white; /* Change text color when selected */
+    border-color: #ff4c7a; /* Change border color when selected */
+  }
+  
+  #quizResult, #drawingCount {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff6f91; /* Pink color for results */
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  #finalMessage {
+    text-align: center;
+  }
+  
+  #finalMessage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Rounded corners for images */
+  }
+  
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 2em; /* Responsive font size */
+    }
+  
+    h2 {
+      font-size: 1.5em; /* Responsive font size */
+    }
+  
+    button {
+      width: 100%; /* Full-width buttons on small screens */
+    }
+  
+    .container {
+      padding: 30px; /* More padding for mobile */
+    }
+  }
+
+  /* Heart Animation Styles */
+.dancing-icon {
+    width: 75px;
+    height: 78px;
+    margin: 0 auto; /* Center the hearts */
+    position: fixed; /* Fixed position to stay in view */
+    top: 10%; /* Adjust top position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    pointer-events: none; /* Allow clicks to pass through */
+  }
+  
+  .heart {
+    z-index: 0;
+    position: absolute;
+    top: 280px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: url("https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/15721583221557740359-512.png") no-repeat;
+    background-size: cover;
+    font-size: 10px;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-name: hearts;
+  }
+  
+  .hearts-animations .heart:nth-child(1) {
+    animation-delay: 1.25s;
+    left: 82px;
+  }
+  
+  .hearts-animations .heart:nth-child(2) {
+    animation-delay: 0.75s;
+    left: -32px;
+  }
+  
+  .hearts-animations .heart:nth-child(3) {
+    animation-delay: 1.75s;
+    left: 92px;
+  }
+  
+  @keyframes hearts {
+    0% { transform: rotate(20deg); opacity: 0; }
+    50% { transform: rotate(-20deg); opacity: 1; }
+    100% { top: -60px; transform: rotate(20deg); opacity: 0; }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .dancing-icon {
+      width: 50px; /* Smaller size for mobile */
+      height: 52px; /* Smaller size for mobile */
+      top: 5%; /* Adjust top position for mobile */
+    }
+  
+    .heart {
+      width: 40px; /* Smaller heart size */
+      height: 40px; /* Smaller heart size */
+    }
+  }
